@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>ValiQuad · Omah Loopeace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- Ikon (sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></symbol>
+<symbol id="i-table" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.8 6 6.2.7-4.6 4.3 1.4 6.5L12 17.3 6.2 20.5l1.4-6.5L3 9.7 9.2 9z"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H4v1a4 4 0 0 0 4 4M16 6h4v1a4 4 0 0 1-4 4M12 13v4M8 21h8M10 17h4"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+<symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V3h10v6M7 17H4v-6h16v6h-3M7 14h10v7H7z"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.5 0 4 1.5 4 4"/></symbol>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+</defs></svg>
+
+<div class="shell">
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="side no-print" id="side" aria-label="Navigasi utama">
+  <div class="side-brand">
+    <svg class="logo" viewBox="0 0 30 30" aria-hidden="true"><rect width="14" height="14" rx="4" fill="#1D4A38"/><rect x="16" width="14" height="14" rx="4" fill="#C86D3B"/><rect y="16" width="14" height="14" rx="4" fill="#9E425D"/><rect x="16" y="16" width="14" height="14" rx="4" fill="#6B7270"/></svg>
+    <div><b>ValiQuad</b><small>Omah Loopeace</small></div>
+    <button class="side-close" id="sideClose" aria-label="Tutup menu"><svg class="ic"><use href="#i-x"/></svg></button>
+  </div>
+  <nav class="side-nav" id="nav">
+    <button data-view="dashboard" class="on"><svg class="ic"><use href="#i-home"/></svg><span>Dashboard</span></button>
+    <button data-view="input"><svg class="ic"><use href="#i-bulb"/></svg><span>Input Ide</span></button>
+    <button data-view="tabel"><svg class="ic"><use href="#i-table"/></svg><span>Tabel Validasi</span><em class="cnt" id="navCount">10</em></button>
+    <button data-view="grafik"><svg class="ic"><use href="#i-chart"/></svg><span>Grafik</span></button>
+    <button data-view="bandingkan"><svg class="ic"><use href="#i-scale"/></svg><span>Bandingkan</span></button>
+    <button data-view="laporan"><svg class="ic"><use href="#i-doc"/></svg><span>Laporan</span></button>
+  </nav>
+  <div class="side-card">
+    <svg viewBox="0 0 160 110" aria-hidden="true"><path d="M20 58l60-34 60 34" fill="none" stroke="#1D4A38" stroke-width="4" stroke-linejoin="round"/><rect x="32" y="58" width="96" height="40" fill="#fff" stroke="#1D4A38" stroke-width="3"/><path d="M26 58h108l-8-14H34z" fill="#DCE7DF" stroke="#1D4A38" stroke-width="3"/><rect x="68" y="72" width="24" height="26" rx="2" fill="#F3E2D4" stroke="#1D4A38" stroke-width="2.5"/><rect x="40" y="68" width="18" height="14" fill="#E3EFE7" stroke="#1D4A38" stroke-width="2"/><rect x="102" y="68" width="18" height="14" fill="#E3EFE7" stroke="#1D4A38" stroke-width="2"/><path d="M14 98c0-14 10-22 12-30 3 8 12 14 12 30zM146 98c0-14-10-22-12-30-3 8-12 14-12 30z" fill="#7FA88F"/></svg>
+    <p>Dukung UMKM Indonesia dengan inovasi terbaik</p>
+    <svg class="ic heart"><use href="#i-heart"/></svg>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<!-- ===== KONTEN ===== -->
+<div class="content">
+  <header class="topbar no-print">
+    <button class="burger" id="burger" aria-label="Buka menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+    <span class="crumb" id="crumb">Dashboard</span>
+    <div class="top-r"><span class="pill-beige"><svg class="ic"><use href="#i-cap"/></svg>XI PPLG 3</span><button class="btn" id="addBtn"><svg class="ic"><use href="#i-plus"/></svg>Tambah Ide</button></div>
+  </header>
+
+  <main>
+
+  <!-- 1. DASHBOARD -->
+  <section class="view on" id="dashboard" data-title="Dashboard">
+    <div class="hero">
+      <svg class="blob" viewBox="0 0 600 300" aria-hidden="true" preserveAspectRatio="xMaxYMin slice"><path d="M600 0v250c-90 30-150-40-230-20S210 150 120 90 40 0 40 0z" fill="#DCE7DF"/><circle cx="470" cy="38" r="44" fill="#C86D3B" opacity=".92"/></svg>
+      <svg class="hero-art" viewBox="0 0 360 230" aria-hidden="true">
+        <rect x="0" y="180" width="360" height="50" rx="6" fill="#B98B5E"/><rect x="0" y="180" width="360" height="8" fill="#9C7149"/>
+        <path d="M250 110c-30-40 6-84 24-92 6 38 10 70-24 92zM250 110c-48-8-62-48-56-70 36 8 62 32 56 70zM262 112c34-20 70-14 84 8-30 18-62 16-84-8z" fill="#4E7A5C"/><path d="M262 118c-4-30-10-60-4-96" stroke="#2E5A44" stroke-width="3" fill="none"/>
+        <path d="M120 180c-14-40 4-78 54-78s70 38 56 78z" fill="#D8B27A"/><path d="M128 150h92M124 165h100M140 128h68" stroke="#B98B5E" stroke-width="3" fill="none"/><path d="M142 106c8-34 56-34 64 0" fill="none" stroke="#B98B5E" stroke-width="7" stroke-linecap="round"/>
+        <rect x="290" y="130" width="46" height="50" rx="10" fill="#E8DCC8"/><rect x="302" y="108" width="22" height="26" rx="8" fill="#F3E2D4"/>
+      </svg>
+      <div class="hero-txt">
+        <p class="eyebrow">STUDI KASUS UMKM · OMAH LOOPEACE (BU SRI)</p>
+        <h1>Dashboard Validasi Ide Solusi</h1>
+        <p class="sub">Matriks Prioritas Feasibility vs Impact — Khaira Putri Madani &amp; Asyifa</p>
+        <span class="uline"></span>
+      </div>
+      <div class="acts no-print">
+        <button class="btn-o" id="loadBtn"><svg class="ic"><use href="#i-down"/></svg>Muat 10 Ide LKPD 5</button>
+        <button class="btn" id="printBtn"><svg class="ic"><use href="#i-print"/></svg>Cetak Laporan PDF</button>
+      </div>
+    </div>
+
+    <div class="kpis" id="kpis"></div>
+    <div class="strip" id="strip"></div>
+
+    <div class="split">
+      <div class="card">
+        <div class="chead"><svg class="ic"><use href="#i-grid"/></svg><h3>Matriks Feasibility vs Impact</h3>
+          <div class="seg no-print"><button id="vq" class="on">Quadrant</button><button id="vd">Detail</button></div></div>
+        <div class="cbody">
+          <div id="quadView"><div class="chart"><canvas id="scatter"></canvas></div><p class="foot" id="foot"></p></div>
+          <div id="detView" class="g2 hidden"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="chead"><svg class="ic fill"><use href="#i-star"/></svg><h3>Spotlight Ide Terpilih #1</h3></div>
+        <div class="cbody" id="spot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. INPUT IDE -->
+  <section class="view no-print" id="input" data-title="Input Ide">
+    <header class="phead"><p class="eyebrow">LKPD 5 · TAMBAH &amp; UBAH DATA</p><h2 id="formTitle">Input Ide Baru</h2><p class="sub">Beri skor 1–5 untuk kelayakan dan dampak; kuadran dihitung otomatis.</p></header>
+    <div class="split2">
+      <form class="card pad" id="form" novalidate>
+        <label>Nama Ide Solusi<input id="fNama" placeholder="Contoh: Notifikasi stok habis" autocomplete="off"/></label>
+        <p class="err" id="err" role="alert"></p>
+        <div class="g2">
+          <label>Target Pengguna<select id="fTarget"></select></label>
+          <label>Teknik SCAMPER (opsional)<select id="fScamper"></select></label>
+          <label>Feasibility (1–5)<select id="fF"></select></label>
+          <label>Impact (1–5)<select id="fI"></select></label>
+        </div>
+        <div class="row"><button class="btn" id="saveBtn">Simpan Ide</button><button type="button" class="btn-o hidden" id="cancelBtn">Batal Edit</button></div>
+      </form>
+      <aside class="card pad prev" id="prev" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <!-- 3. TABEL VALIDASI -->
+  <section class="view no-print" id="tabel" data-title="Tabel Validasi">
+    <header class="phead"><p class="eyebrow">DAFTAR IDE &amp; SKOR</p><h2>Tabel Validasi Ide</h2><p class="sub" id="tableInfo">Cari, saring, urutkan, dan ekspor seluruh ide.</p></header>
+    <div class="card pad">
+      <div class="tools">
+        <label class="search"><svg class="ic"><use href="#i-search"/></svg><input id="q" placeholder="Cari ide…" aria-label="Cari ide"/></label>
+        <select id="quad" aria-label="Filter kuadran"></select><select id="tgt" aria-label="Filter target"></select>
+        <select id="sort" aria-label="Urutkan"><option value="total">Total Tertinggi</option><option value="f">Feasibility Tertinggi</option><option value="i">Impact Tertinggi</option><option value="">Default</option></select>
+        <button class="btn-o" id="csv">Export CSV</button><button class="btn-o" id="json">Export JSON</button><button class="btn-o danger" id="reset">Reset Data</button>
+      </div>
+      <div class="scroll"><table><thead><tr><th>No</th><th>Nama Ide</th><th>Target</th><th>F</th><th>I</th><th>Total</th><th>Kuadran</th><th>Aksi</th></tr></thead><tbody id="tbody"></tbody></table></div>
+    </div>
+  </section>
+
+  <!-- 4. GRAFIK -->
+  <section class="view" id="grafik" data-title="Grafik">
+    <header class="phead"><p class="eyebrow">PERINGKAT SKOR TOTAL</p><h2>Grafik Skor &amp; Analisis Keseimbangan</h2><p class="sub">Warna batang mengikuti kuadran masing-masing ide.</p></header>
+    <div class="split">
+      <div class="card pad"><div class="chart tall"><canvas id="bar"></canvas></div></div>
+      <div class="card pad insight" id="ins"></div>
+    </div>
+  </section>
+
+  <!-- 5. BANDINGKAN -->
+  <section class="view no-print" id="bandingkan" data-title="Bandingkan">
+    <header class="phead"><p class="eyebrow">KEPUTUSAN BERDAMPINGAN</p><h2>Bandingkan 2 Ide</h2><p class="sub">Pilih dua ide untuk melihat selisih skor dan rekomendasinya.</p></header>
+    <div class="g2"><label>Ide A<select id="cA"></select></label><label>Ide B<select id="cB"></select></label></div>
+    <div class="g2" id="cCards"></div>
+    <div class="insight" id="cRec" aria-live="polite"></div>
+  </section>
+
+  <!-- 6. LAPORAN -->
+  <section class="view" id="laporan" data-title="Laporan">
+    <header class="phead no-print"><p class="eyebrow">LKPD 6 · SIAP CETAK</p><h2>Catatan &amp; Laporan</h2><p class="sub">Edit catatan kelompok, lalu simpan laporan sebagai PDF.</p></header>
+    <div class="no-print note-box"><label>Catatan Pertimbangan Kelompok<textarea id="note" rows="5"></textarea></label><button class="btn-o" id="restore">Pulihkan teks default</button></div>
+    <article class="card pad report">
+      <div class="rhead"><svg class="logo" viewBox="0 0 30 30" aria-hidden="true"><rect width="14" height="14" rx="4" fill="#1D4A38"/><rect x="16" width="14" height="14" rx="4" fill="#C86D3B"/><rect y="16" width="14" height="14" rx="4" fill="#9E425D"/><rect x="16" y="16" width="14" height="14" rx="4" fill="#6B7270"/></svg>
+        <div><h2>Laporan Hasil Survei &amp; Validasi Ide (LKPD 6)</h2><p>Khaira Putri Madani &amp; Asyifa · XI PPLG 3 · Kreativitas Inovasi dan Kewirausahaan · Ganjil 2026/2027</p></div></div>
+      <div class="scroll"><table><thead><tr><th>Peringkat</th><th>Ide</th><th>F</th><th>I</th><th>Total</th><th>Kuadran</th></tr></thead><tbody id="rbody"></tbody></table></div>
+      <p id="concl"></p><p id="rnote"></p>
+      <button class="btn no-print" id="print2"><svg class="ic"><use href="#i-print"/></svg>Cetak / Simpan Laporan (PDF)</button>
+    </article>
+  </section>
+
+  </main>
+</div>
+</div>
+
+<div class="toast no-print hidden" id="toast" role="status"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
